@@ -1,0 +1,51 @@
+# NS-3 build artifacts
+build/
+cmake-cache/
+.lock-ns3*
+.ns3rc
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Analysis output
+analysis_results/
+*.csv
+*.png
+*.pdf
+
+# NS-3 output files
+*.pcap
+*.tr
+*.log
+*.dat
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Compiled files
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+
+# Documentation
+doc/build/
+doc/_build/
+
+# Test outputs
+testpy-output/

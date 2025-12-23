@@ -1,0 +1,28 @@
+## -*- Mode: python; py-indent-offset: 4; indent-tabs-mode: nil; coding: utf-8; -*-
+
+def build(bld):
+    module = bld.create_ns3_module('v2x-engine', ['core', 'network', 'internet', 'mobility', 'applications', 'energy'])
+    module.source = [
+        'model/consensus-module.cc',
+        'model/pow-module.cc',
+        'model/pos-module.cc',
+        'model/fba-module.cc',
+        'model/node-app.cc',
+        'helper/vanet-engine-helper.cc',
+        ]
+
+    headers = bld(features='ns3header')
+    headers.module = 'v2x-engine'
+    headers.source = [
+        'model/consensus-module.h',
+        'model/pow-module.h',
+        'model/pos-module.h',
+        'model/fba-module.h',
+        'model/node-app.h',
+        'helper/vanet-engine-helper.h',
+        ]
+
+    if bld.env.ENABLE_EXAMPLES:
+        bld.recurse('examples')
+
+    # bld.ns3_python_bindings()
